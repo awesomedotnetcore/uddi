@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.stelinno.uddi</groupId>
+  <artifactId>uddi-dtl</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>uddi-dtl</name>
+  <description>The data transfer layer for the UDDI</description>
+  
+  <dependencies>
+	<dependency>
+		<groupId>com.jmethods</groupId>
+		<artifactId>catatumbo</artifactId>
+		<!-- Use the latest version or change it to the desired version -->
+		<version>2.2.0</version>
+		<!-- <version>1.4.0</version> -->
+	</dependency>
+  </dependencies>
+  
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ftp</artifactId>
+        <version>1.0-alpha-6</version>
+      </extension>
+    </extensions>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>stelinno-mvn-repo</id>
+      <!-- <url>ftp://sundgaard.ddns.net/stelinno-mvn-repo</url>  -->
+      <url>ftp://sundgaard.ddns.net:61/stelinno-mvn-repo</url>
+    </repository>
+  </distributionManagement>  
+</project>
