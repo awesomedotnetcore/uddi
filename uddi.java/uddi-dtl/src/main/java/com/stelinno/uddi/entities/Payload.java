@@ -27,10 +27,13 @@ public class Payload {
 	}
 
 	public void setParametersStr(String parametersStr) {
+		this.parametersStr = parametersStr;
 		if(parametersStr != null && !parametersStr.isEmpty()) {
 			Type listType = new TypeToken<List<PayloadParameter>>(){}.getType();
 			this.parameters = gson.fromJson(parametersStr, listType);
 		}
+		else
+			this.parameters = null;
 	}
 
 	public List<PayloadParameter> getParameters() {
@@ -38,7 +41,10 @@ public class Payload {
 	}
 
 	public void setParameters(List<PayloadParameter> parameters) {
+		this.parameters = parameters;
 		if(parameters != null)
 			this.parametersStr = gson.toJson(parameters);
+		else
+			this.parametersStr = null;
 	}
 }
